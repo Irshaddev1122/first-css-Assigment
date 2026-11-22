@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Assignment 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #ffffff;
+        font-family: "Georgia", serif;
+        color: #333333;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .pic-card {
+        max-width: 650px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .image-container img {
+        width: 40%;
+        height: auto;
+        display: block;
+        margin-bottom: 25px;
+      }
+
+      .per {
+        font-family: "Arial", sans-serif;
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: #999999;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-family: "Arial", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: #111111;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .date {
+        font-size: 12px;
+        font-style: italic;
+        color: #888888;
+        margin-bottom: 25px;
+      }
+
+      .tarif {
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.8;
+        color: #555555;
+      }
+
+      p {
+        margin-bottom: 18px;
+      }
+
+      .more {
+        display: inline-block;
+        margin-top: 15px;
+        font-family: "Arial", sans-serif;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        color: #777777;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 3px;
+      }
+
+      .more:hover {
+        color: #000000;
+        border-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pic-card">
+      <div class="image-container">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIrAtMX7YMioKoUUq_8rqAVI_m2qlLvVdR3ZUScc7yw&s=10"
+          alt=""
+        />
+      </div>
+      <p class="per">UNCATEGORIZED</p>
+
+      <h1 class="title">LOVE & TRAGEDY IN HARMONY</h1>
+
+      <p class="date">November 18, 2026 | By John Doe</p>
+
+      <div class="tarif">
+        <p>
+          Music has a unique way of capturing the deepest human emotions,
+          blending joy and sorrow into a single melody. Every strum of the
+          guitar tells a story that words alone often fail to express.
+        </p>
+        <p>
+          Through quiet moments of reflection, melodies are born from personal
+          experiences and shared memories. The rhythm carries the weight of past
+          struggles while offering a sense of peace and resolution.
+        </p>
+        <p>
+          In the end, harmony is found not by avoiding the difficult notes, but
+          by weaving them together with care. Listeners connect with the honesty
+          behind the sound, finding comfort in knowing they are not alone.
+        </p>
+      </div>
+
+      <a href="" class="more">CONTINUE READING &rarr;</a>
+    </div>
+  </body>
+</html>

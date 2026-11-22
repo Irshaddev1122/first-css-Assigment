@@ -3,125 +3,357 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Assignment 1</title>
+    <title>Fashion Store</title>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       body {
-        background-color: #ffffff;
-        font-family: "Georgia", serif;
-        color: #333333;
-        display: flex;
-        justify-content: center;
-        padding: 40px 20px;
+        background-color: #f8fafc;
+        color: #1e293b;
+        line-height: 1.6;
       }
 
-      .pic-card {
-        max-width: 650px;
+      /* Step 1: Navbar */
+      .navbar {
+        background-color: #0f766e;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px 10px 15px;
+      }
+
+      .navbar h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      .categories {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+        color: #0f172a;
+        padding: 15px 10px;
+        border-radius: 6px;
+        max-width: 1100px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(15, 118, 110, 0.12);
+      }
+
+      .category-item {
+        text-align: center;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .category-item:hover {
+        transform: translateY(-4px);
+        color: #e11d48;
+      }
+
+      .category-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-bottom: 6px;
+      }
+
+      .category-item p {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* Step 2: Shopping Banner */
+      .banner {
+        max-width: 1100px;
+        margin: 25px auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      }
+
+      .banner h2 {
+        font-size: 26px;
+        color: #0f766e;
+        margin-bottom: 5px;
+      }
+
+      .banner p {
+        color: #475569;
+        margin-bottom: 15px;
+      }
+
+      .banner img {
         width: 100%;
+        max-height: 360px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      /* Step 3: Upcoming Sales Table */
+      .sales-section {
+        max-width: 1100px;
+        margin: 25px auto;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      }
+
+      .sales-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #0f172a;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
         text-align: center;
       }
 
-      .image-container img {
-        width: 40%;
-        height: auto;
-        display: block;
-        margin-bottom: 25px;
+      th,
+      td {
+        border: 1px solid #cbd5e1;
+        padding: 12px 15px;
       }
 
-      .per {
-        font-family: "Arial", sans-serif;
-        font-size: 10px;
-        letter-spacing: 2px;
-        color: #999999;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+      th {
+        background-color: #0f766e;
+        color: #ffffff;
+        font-size: 16px;
       }
 
-      .title {
-        font-family: "Arial", sans-serif;
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        color: #111111;
-        text-transform: uppercase;
+      tr:nth-child(even) {
+        background-color: #f0fdfa;
+      }
+
+      del {
+        color: #94a3b8;
+        margin-right: 6px;
+      }
+
+      .highlight {
+        color: #e11d48;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      /* Step 4, 5 & 6: Information Section */
+      .info-section {
+        max-width: 1100px;
+        margin: 25px auto;
+        background-color: #ffffff;
+        padding: 25px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+        color: #334155;
+      }
+
+      .info-section h2 {
+        color: #0f766e;
+        margin-bottom: 12px;
+        font-size: 22px;
+      }
+
+      .info-section h3 {
+        color: #0f172a;
+        margin-top: 20px;
         margin-bottom: 8px;
+        font-size: 18px;
       }
 
-      .date {
-        font-size: 12px;
-        font-style: italic;
-        color: #888888;
-        margin-bottom: 25px;
+      .info-section p {
+        margin-bottom: 12px;
+        font-size: 15px;
       }
 
-      .tarif {
-        text-align: left;
+      .info-section ul {
+        margin-left: 22px;
+        margin-bottom: 12px;
+      }
+
+      .info-section li {
+        margin-bottom: 6px;
+        font-size: 15px;
+      }
+
+      /* Step 7: Footer */
+      footer {
+        background-color: #0f172a;
+        color: #f8fafc;
+        text-align: center;
+        padding: 18px 10px;
+        margin-top: 30px;
         font-size: 14px;
-        line-height: 1.8;
-        color: #555555;
-      }
-
-      p {
-        margin-bottom: 18px;
-      }
-
-      .more {
-        display: inline-block;
-        margin-top: 15px;
-        font-family: "Arial", sans-serif;
-        font-size: 11px;
-        letter-spacing: 1.5px;
-        color: #777777;
-        text-decoration: none;
-        text-transform: uppercase;
-        border-bottom: 1px solid #cccccc;
-        padding-bottom: 3px;
-      }
-
-      .more:hover {
-        color: #000000;
-        border-color: #000000;
       }
     </style>
   </head>
   <body>
-    <div class="pic-card">
-      <div class="image-container">
+    <!-- Step 1: Navbar -->
+    <header class="navbar">
+      <h1>FASHION STORE</h1>
+      <div class="categories">
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/892/892458.png"
+            alt="T-Shirts"
+          />
+          <p>T-Shirts</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/146/146024.png"
+            alt="Sun Glasses"
+          />
+          <p>Sun Glasses</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2503/2503380.png"
+            alt="Shirts"
+          />
+          <p>Shirts</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2589/2589903.png"
+            alt="Shoes"
+          />
+          <p>Shoes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3531/3531818.png"
+            alt="Pants"
+          />
+          <p>Pants</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3081/3081840.png"
+            alt="Perfumes"
+          />
+          <p>Perfumes</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Step 2: Shopping Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h2>SHOPPING TIME</h2>
+        <p>Grab the latest trends with unbeatable deals!</p>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIrAtMX7YMioKoUUq_8rqAVI_m2qlLvVdR3ZUScc7yw&s=10"
-          alt=""
+          src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1000&q=80"
+          alt="Shopping Time Banner"
         />
       </div>
-      <p class="per">UNCATEGORIZED</p>
+    </section>
 
-      <h1 class="title">LOVE & TRAGEDY IN HARMONY</h1>
+    <!-- Step 3: Upcoming Sales Table -->
+    <section class="sales-section">
+      <h2>OUR UPCOMING SALES</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Festival</th>
+            <th>Discount</th>
+            <th>Starting Date</th>
+            <th>Ending Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Independence Day</td>
+            <td><del>30%</del> <span class="highlight">40%</span></td>
+            <td>10 August</td>
+            <td>18 August</td>
+          </tr>
+          <tr>
+            <td>Diwali</td>
+            <td><del>50%</del> <span class="highlight">60%</span></td>
+            <td>10 November</td>
+            <td>21 November</td>
+          </tr>
+          <tr>
+            <td>Christmas</td>
+            <td><del>35%</del> <span class="highlight">50%</span></td>
+            <td>20 December</td>
+            <td>26 December</td>
+          </tr>
+          <tr>
+            <td>New Year</td>
+            <td><del>60%</del> <span class="highlight">75%</span></td>
+            <td>30 December</td>
+            <td>6 January</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-      <p class="date">November 18, 2026 | By John Doe</p>
+    <!-- Step 4, 5 & 6: Store Info, Festival Sales & Payment Options -->
+    <section class="info-section">
+      <h2>Fashion Store: The One-stop Fashion Destination</h2>
+      <p>
+        Stepping out and planning a trip to the mall just to buy a few clothes
+        can be exhausting. At Fashion Store, we bring the entire showroom
+        straight to your screen. From casual wear and formal shirts to stylish
+        footwear, sunglasses, and luxury perfumes, we offer top-notch quality at
+        budget-friendly prices with fast doorstep delivery and hassle-free
+        returns.
+      </p>
 
-      <div class="tarif">
-        <p>
-          Music has a unique way of capturing the deepest human emotions,
-          blending joy and sorrow into a single melody. Every strum of the
-          guitar tells a story that words alone often fail to express.
-        </p>
-        <p>
-          Through quiet moments of reflection, melodies are born from personal
-          experiences and shared memories. The rhythm carries the weight of past
-          struggles while offering a sense of peace and resolution.
-        </p>
-        <p>
-          In the end, harmony is found not by avoiding the difficult notes, but
-          by weaving them together with care. Listeners connect with the honesty
-          behind the sound, finding comfort in knowing they are not alone.
-        </p>
-      </div>
+      <h3>Festival Sales</h3>
+      <p>
+        We celebrate every special occasion with massive price drops across all
+        categories:
+      </p>
+      <ul>
+        <li>
+          <strong>Independence Day Sale:</strong> Celebrate freedom with flat
+          discounts on ethnic and casual collections.
+        </li>
+        <li>
+          <strong>Diwali Sale:</strong> Brighten up your wardrobe with our
+          biggest festive offers of the year.
+        </li>
+        <li>
+          <strong>Christmas Sale:</strong> Unwrap winter fashion and holiday
+          deals for the entire family.
+        </li>
+        <li>
+          <strong>New Year Sale:</strong> Kick off the new year in style with
+          clearance discounts up to 75% off.
+        </li>
+      </ul>
 
-      <a href="" class="more">CONTINUE READING &rarr;</a>
-    </div>
+      <h3>Payment Options</h3>
+      <p>
+        We support multiple secure and convenient payment methods so you can
+        shop worry-free:
+        <strong>UPI</strong> (Google Pay, PhonePe, Paytm),
+        <strong>Credit/Debit Cards</strong> (Visa, MasterCard, RuPay), easy
+        <strong>No-Cost EMI</strong> options on major banks, and
+        <strong>Cash on Delivery (COD)</strong>
+        available across serviceable pin codes.
+      </p>
+    </section>
+
+    <!-- Step 7: Footer -->
+    <footer>
+      <p>© 2012-2023 FashionStore.com</p>
+    </footer>
   </body>
 </html>
